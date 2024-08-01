@@ -148,7 +148,7 @@ public class Program2
     {
         int[] chars = new int [] { 1, 0, 0, 0, 0, 1, 0};
     
-        Console.WriteLine($"{checkSub("ahbgdc", "axc")}");
+        Console.WriteLine("Hello word ");
 
         
     }
