@@ -52,6 +52,17 @@ class ListNode
     }
 
 }
+class Runner
+{ 
+
+public static void Incrementer()
+{
+
+}
+
+    //Thread[] runners = new Thread[10];  
+
+}
 public class Program2
 {
 
@@ -96,7 +107,27 @@ public class Program2
   //          }
   //      }
   //  }
-  public static bool checkSub(string s1, string s2)
+
+    public static void Display()
+    {
+        
+        for (int i = 0; i < 100; i++)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(" premeirs thtread "+i);
+        }
+    }
+    public static void Display2()
+    {
+    
+        for (int i = 0; i < 100; i++)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine(" premeirs thtread " + i);
+        }
+    }
+    public static bool checkSub(string s1, string s2)
     {
         int indice = -1;
         for (int i = 0; i < s2.Length; i++)
@@ -119,6 +150,7 @@ public class Program2
         return true;
     }
 
+    
     public static bool checkF(int[] t, int n)
     {
         int cpt = 0;
@@ -146,9 +178,15 @@ public class Program2
     }
     public static void Main(string[] args)
     {
-        int[] chars = new int [] { 1, 0, 0, 0, 0, 1, 0};
-    
-        Console.WriteLine("Hello word 123   ");
+        Thread[] threads = new Thread[10]; 
+
+       
+             threads[0] = new Thread(Display);
+            threads[0].Start();
+
+            threads[1] = new Thread(Display2);
+            threads[1].Start();
+        
        
 
     }
@@ -158,3 +196,10 @@ public class Program2
    
 }
 
+public class MyClass<T> where T : new()
+{
+    public T CreateInstance()
+    {
+        return new T(); // Crée une instance de T en utilisant son constructeur par défaut
+    }
+}
